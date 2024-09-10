@@ -1,0 +1,19 @@
+<script>
+    document.getElementById('activityForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        fetch('/submit', {
+            method: 'POST',
+            body: new FormData(this)
+        })
+        .then(response => response.json())
+        .then(data => {
+            const table = document.querySelector('table tbody');
+            const newRow = table.insertRow(0);
+            const cell = newRow.insertCell(0);
+            cell.textContent = data.entry;
+            
+            document.getElementById('activity').value = '';
+        });
+    });
+</script>
