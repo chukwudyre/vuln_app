@@ -1,0 +1,12 @@
+div.stButton > button:first-child {
+    width: 100%;
+}
+
+div.stButton > button:hover {
+    background-color: #0099ff;
+    color: white;
+}
+
+.stButton > button[data-baseweb="button"] {
+    margin-top: 0;
+}
